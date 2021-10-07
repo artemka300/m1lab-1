@@ -1,0 +1,138 @@
+.slaider {
+    width: 100vw;
+    height: 50vh;
+    overflow: hidden;
+    position: relative;
+    background-color: rgb(42, 53, 201);
+}
+
+.slaiders {
+    display: flex;
+    transition: 0.7s;
+    height: 50vh;
+}
+
+.slaider_content {
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+    width: 100vw;
+    height: 50vh;
+}
+.searc
+{
+    font-size: 2rem;
+}
+.slaider_content_text {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 40%;
+    height: 100%;
+}
+
+.slaider_content_text p {
+    font-weight: 100;
+}
+
+.slaider_content_text p span {
+    color: rgb(255, 148, 47);
+    font-weight: 900;
+}
+
+.slaider_content_text h3 span {
+    color: rgb(255, 113, 47);
+    font-weight: 900;
+}
+.slaider_content_text h3 {
+    margin: 5% 0;
+    font-size: 2.5em;
+}
+
+.slaider_content_text button {
+    margin: 5% 0;
+    font-size: 1em;
+}
+
+.slaider_content_img {
+    width: 30%;
+    padding: 5%;
+}
+
+.slaider_content_img img {
+    height: 80%;
+}
+
+.slaider_content img {
+    max-width: 120%;
+    min-height: 100%;
+}
+
+.arrowsl {
+    cursor: pointer;
+    color: white;
+    font-size: 4rem;
+    opacity: .6;
+    transform: rotateZ(180deg) translateY(30%);
+}
+
+.arrowsr {
+    cursor: pointer;
+    color: white;
+    font-size: 4rem;
+    opacity: .6;
+    transform: translateY(-50%);
+}
+
+.arrow {
+    position: absolute;
+    display: flex;
+    transform: translateY(-50%);
+    top: 100%;
+    left: 2%;
+    z-index: 2;
+}
+
+@media (max-width:1200px) {
+    html {
+        overflow-x: hidden;
+    }
+    body {
+        overflow-x: hidden;
+    }
+    .slaider {
+        height: 65vh;
+    }
+    .slaider_content_img {
+        display: none;
+    }
+    .slaider_content_text {
+        overflow: none;
+        width: 95%;
+        display: flex;
+    }
+    .slaider_content {
+        overflow: none;
+        display: flex;
+        justify-content: flex-start;
+        overflow: visible;
+        align-items: flex-start;
+    }
+    .slaider_content {
+        height: 100%;
+        padding: 10px;
+    }
+    
+.slaider_content_text h3 span {
+    color: rgb(255, 113, 47);
+    font-weight: 900;
+}
+
+.slaider_content_text h3 {
+    margin: 5% 0;
+    font-size: 1.5em;
+}
+
+}
