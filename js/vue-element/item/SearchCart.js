@@ -1,27 +1,15 @@
 const SearchCart = {
     template:
-        `
-        <div class="row shadow border-3 border   rounded-3 overflow-hidden mt-4"  >
-            <div class="col-md-6  bg-dark text-white  pt-3">
-                <p>Наименование анализа</p>
-                <h5>{{itemarr.analysis_name}}</h5>
-            </div>
-            <div class="col-md-2  bg-dark text-white  pt-3">
-                <p>Объект исследования</p>
-                <h5>{{itemarr.research_object}}</h5>
-            </div>
-      
-            <div class="col-md-2  bg-dark text-white  pt-3">
-                <p>Цена</p>
-                <h4>{{itemarr.price}}</h4>
-            </div>
-            <div class="col-md-2 bg-dark text-white   p-4">
-                <button type="button" v-if="clickon" class="btn btn-primary" @click="addcart(itemarr.id)">добавить в корзину</button>
-                 <button type="button"  v-else class="btn btn-success"  @click="delcart()" >добавлен в корзину</button>
-            </div>
-            <div class="col-md-4  bg-light bg-gradient pt-3  pb-1">
-                <h6>Время выполнения: {{itemarr.lead_time}} день</h6>
-            </div>
+    `<tr> 
+        <td>{{itemarr.analysis_name}}</td>
+        <td>{{itemarr.research_object}}</td>
+        <td>{{itemarr.lead_time}} день</td>
+        <td>{{itemarr.price}} руб.</td>
+        <td class="text-end"><button type="button" v-if="!clickon"   class="btn btn-outline-info" @click="delcart()">Из корзины</button>
+        <button type="button" v-if="clickon"  class="btn btn-outline-info" @click="addcart(itemarr.id)"> В корзину</button>
+        </td>
+ 
+        <tr>
         `
     ,
     props:[

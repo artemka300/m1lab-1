@@ -2,49 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>lab46</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./css/style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/css/main.css" rel="stylesheet">
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <title>ProLab46</title>
 </head>
 <body>
 <div id="app">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid  h-25  ">
-            <a class="navbar-brand" href="#">
-                <img src="./image/microscope.png" width="30" height="30" class="d-inline-block align-top" alt=""
-                     loading="lazy">
-                ProLab46
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse navbar" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link  " href="#">Анализы</a>
-                    <a class="nav-link" href="#">Акции</a>
-                    <a class="nav-link" href="#">Подготовка</a>
-                    <a class="nav-link" href="#">Выезд на дом</a>
-                    <a class="nav-link" href="#">Личный кабинет</a>
+    <header class="p-3 mb-3 border-bottom">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <router-link to="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                    <img src="./assets/images/logo.png">
+                    <span class="fs-4">ProLab46</span>
+                </router-link>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><router-link to="/search" class="nav-link px-2 link-dark">Анализы</router-link></li>
+                    <li><router-link to="/actions" class="nav-link px-2 link-dark">Акции</router-link></li>
+                    <li><router-link to="#" class="nav-link px-2 link-dark">Подготовка</router-link></li>
+                    <li><router-link to="#" class="nav-link px-2 link-dark">Выезд на дом</router-link></li>
+                    <li><router-link to="/login" class="nav-link px-2 link-dark">Личный кабинет</router-link></li>
+                </ul>
+                <div class="dropdown text-end">
+                    <router-link class="nav-link p-2" to="/cart" rel="noopener">
+                        <img src="./assets/images/cart.svg">
+                        <span class="header-action-num"> {{$root.cart.length}}</span>
+                    </router-link>
                 </div>
             </div>
-             <router-link class="navbar-brand" to="/cart">
-                {{postcartarrlength}}
-                <img src="./image/shopping-cart.png" width="30" height="30" class="d-inline-block align-top" alt=""
-                     loading="lazy">
-             </router-link>
         </div>
-    </nav>
-    <router-link to="/">дом  </router-link>
-    <router-link to="/about"> инфа</router-link>
-    <router-link to="/search"> инфа</router-link>
-    <router-link to="/login"> login</router-link>
-    <router-link to="/lk-page"> lk-page</router-link>
+    </header>
     <router-view>
-
+       
     </router-view>
 
 
@@ -52,7 +44,6 @@
 
 
 </body>
-<script src="./js/bootstrap.min.js"></script>
 
 
 <script src="./js/vue.global.js"></script>
@@ -60,11 +51,11 @@
 <script src="./js/vue-element/item/SearchCart.js"></script>
 <script src="./js/vue-element/Cart.js"></script>
 <script src="./js/vue-element/LkPage.js"></script>
+<script src="./js/vue-element/Actions.js "></script>
 <script src="./js/vue-element/reg.js "></script>
 <script src="./js/vue-element/Order.js"></script>
 <script src="./js/vue-element/login.js"></script>
 <script src="./js/vue-element/Search.js"></script>
 <script src="./js/vue-element/Home.js"></script>
-
 <script src="./js/index.js"></script>
 </html>

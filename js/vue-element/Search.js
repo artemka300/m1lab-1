@@ -1,19 +1,38 @@
 const Search = {
     template:`
-       <div class="container-lg mt-5 mb-5 pt-5 pb-5   ">
-        <h1 class="mb-4">Поиск</h1>
-        <div class="input-group flex-nowrap ">
-         
-          <input type="text" class="form-control  border   border-3 border-dark" v-model="$root.homesearch.serach" placeholder="поиск медицинского анализов" aria-label="анализы"
-            aria-describedby="addon-wrapping">
-            <button type="button" class="btn btn-primary searc"  @click="getsearch()" >🔍</button>
+
+    <div class="container mt-4">
+        <h2 class="fw-light">Анализы в курске</h2>
+    </div>
+
+    <div class="container-lg mt-4 mb-4 pt-2 pb-2  ">
+        <div class="input-group flex-nowrap">
+            <input type="text" class="form-control" placeholder="Поиск медицинских анализов"
+                aria-label="Поиск медицинских анализов" aria-describedby="addon-wrapping" v-model="$root.homesearch.serach">
+            <button type="button" class="btn btn-info search text-white" @click="getsearch()">Найти</button>
         </div>
-        <h5 class="mb-2">Найдено по запросу «{{$root.homesearch.serach}}» </h5>
+        <span>По запросу «{{$root.homesearch.serach}}» найдено {{$root.homesearch.searchArr.length}} анализа</span>
     </div>
-   
-    <div class="container mb-5" >
-    <Search-Cart   :itemarr=item  v-for="(item,index) in $root.homesearch.searchArr"/>       
+
+    <div class="container">
+
+        <table class="table table-hover align-middle table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">Наименование анализа</th>
+                    <th scope="col">Объект исследования</th>
+                    <th scope="col">Время выполнения</th>
+                    <th scope="col" colspan="2">Цена</th>
+                </tr>
+            </thead>
+            <tbody>
+            <Search-Cart   :itemarr=item  v-for="(item,index) in $root.homesearch.searchArr"/>   
+            </tbody>
+
+        </table>
+
     </div>
+
  
     `,
     data() {

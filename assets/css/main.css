@@ -1,0 +1,76 @@
+.header-action-num {
+    font-size: 11px;
+    font-weight: 700;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 50%;
+    background-color: #00a2d3;
+    width: 21px;
+    height: 21px;
+}
+
+.carousel-caption {
+    left: 10%;
+    right: 30%;
+    top: 38%;
+}
+
+.search
+{
+    font-size: 2rem;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+  }
+  
+  .form-signin .checkbox {
+    font-weight: 400;
+  }
+  
+  .form-signin .form-floating:focus-within {
+    z-index: 2;
+  }
+  
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .orders tbody tr {
+    height: 60px;
+  }
+
+  .orders .cursor-pointer {
+    cursor: pointer;
+  }
+
+  .orders .cursor-pointer a {
+    text-decoration:none;
+    color: #212529;
+  }
+
+  .attention {
+    color: red!important;
+    font-weight: bold;
+  }
+
+  .sign {
+    margin-left: 3px;
+  }

@@ -8,7 +8,6 @@ const App = Vue.createApp({
             },
             cart: [],
             ikpagearr: {},
-
             postcartarr: {},
             postcartarrlength: 0,
             postcartarrrub: 0
@@ -18,7 +17,7 @@ const App = Vue.createApp({
         postcart() {
 
             const form = new FormData();
-            form.append('cart', JSON.stringify(this.$root.cart))
+            form.append('analysis_id', JSON.stringify(this.$root.cart))
             fetch(`http://lab/api/cart`, {
                 method: 'POST',
                 body: form
@@ -45,7 +44,8 @@ const routes = [
     {path: '/cart', component: Cart},
     {path: '/login', component: Login},
     {path: '/lk-page', component: LkPage},
-    {path: '/reg', component: Reg},
+    {path: '/register', component: Reg},
+    {path: '/actions', component: Actions},
     {path: '/order/:id', component: Order},
     {path: '/about', component: About}
 ]

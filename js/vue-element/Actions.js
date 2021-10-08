@@ -1,51 +1,77 @@
 const  Actions = {
     template:   `
-     <div class="container-lg mt-5 mb-5 pt-5 pb-5  ">
-        <h1 class="mb-5">Акции</h1>
-       <div class="row">
-        <div class="card m-3 shadow p-3 mb-5 bg-white rounded" style="width: 25em;">
-            <img src="./image/actions/action1.jpg" class="card-img-top" alt="..">
-            <div class="card-body">
-              <h5 class="card-title">Есть ли у вас антитела?</h5>
-              <p class="card-text">В условиях пандемии – всех, естественно, интересует взаимодействие иммунной системы организма с вирусом SARS-CoV-2. Разговор пойдет об антителах класса IgM и IgG, так как на практике эти иммуноглобулины исследуют в крови чаще других.</p>
-              <a href="#" class="btn btn-primary">Подробнее</a>
-              <p>c 20 августа по 20 сентября </p>
+    <div class="container mt-4">
+        <h2 class="fw-light">Акции</h2>
+    </div>
+
+    <div class="album py-3">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="./assets/images/actions/action1.jpg">
+                        <div class="card-body">
+                            <h5 class="card-title">Есть ли у вас антитела</h5>
+                            <p class="card-text">Определение IgG и IgM антител к SARS-CoV-2 за 500 рублей</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
+                                </div>
+                                <small class="text-muted">До 15 декабря</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="./assets/images/actions/action2.jpg">
+                        <div class="card-body">
+                            <h5 class="card-title">Для здоровья почек</h5>
+                            <p class="card-text">Скрининг патологии почек за 1000 рублей</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
+                                </div>
+                                <small class="text-muted">До 1 декабря</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="./assets/images/actions/action3.jpg">
+                        <div class="card-body">
+                            <h5 class="card-title">Опять нет сил?</h5>
+                            <p class="card-text">Комплекс тестов на железодефицит за 1000 рублей</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
+                                </div>
+                                <small class="text-muted">До 15 ноября</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="./assets/images/actions/action4.jpg">
+                        <div class="card-body">
+                            <h5 class="card-title">Для здоровья веганов</h5>
+                            <p class="card-text">Комплексы исследований за 6000 рублей</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
+                                </div>
+                                <small class="text-muted">До 5 ноября</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="card m-3 shadow p-3 mb-5 bg-white rounded" style="width: 25em;">
-          <img src="./image/actions/action2.jpg" class="card-img-top" alt="..">
-          <div class="card-body">
-            <h5 class="card-title">С заботой и уважением</h5>
-            <p class="card-text">Вы можете сдать анализы по акции, воспользовавшись нашими специальными предложениями.</p>
-            <p class="card-text">скидки пенсионерам до 20%.</p>
-            <p class="card-text">скидки военным  до 10%.</p>
-            <p class="card-text">скидки школьникам до 5%.</p>
-            <a href="#" class="btn btn-primary">Подробнее</a>
-            <p> 1 октября по 30 ноября</p>
-          </div>
-      </div>
-      <div class="card m-3 shadow p-3 mb-5 bg-white rounded" style="width: 25em;">
-        <img src="./image/actions/action3.jpg" class="card-img-top" alt="..">
-        <div class="card-body">
-          <h5 class="card-title">близко к сердцу</h5>
-          <p class="card-text">осмотр кожных покровов и слизистых.</p>
-          <p class="card-text">пальпация – прощупывание.</p>
-          <p class="card-text">перкуссия – простукивание..</p>
-          <p class="card-text">аускультация – прослушивание.</p>
-          <a href="#" class="btn btn-primary">Подробнее</a>
-          <p>c 4 октября по 3 ноября</p>
-        </div>
-    </div>
-    <div class="card m-3 shadow p-3 mb-5 bg-white rounded" style="width: 25em;">
-      <img src="./image/actions/action4.jpg" class="card-img-top" alt="..">
-      <div class="card-body">
-        <h5 class="card-title">Добавим солнца?</h5>
-        <p class="card-text">Витамины – это необходимые для здоровья органические вещества, которые участвуют в обмене веществ. Один из них – витамин D.</p>
-        <a href="#" class="btn btn-primary">Подробнее</a>
-        <p>c 1 октября по 1 ноября</p>
-      </div>
-  </div>
-       </div>
-      </div>
+
     `
 }
