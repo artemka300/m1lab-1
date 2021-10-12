@@ -56,4 +56,5 @@ const router = VueRouter.createRouter({
 
 App.use(router);
 App.component('Search-Cart', SearchCart);
+App.component('Order-Cart', OrderItem);
 App.mount('#app');

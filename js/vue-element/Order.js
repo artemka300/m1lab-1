@@ -59,7 +59,7 @@ const Order = {
             <tbody       v-for="(elem,h) in   item.research_result" >
                 <tr class="table-secondary" >
                     <th class="text-center">{{h+1}}</th>
-                    <th colspan="4">{{elem.analysis_name}}</th>
+                    <th colspan="4">{{elem.analysis_name}}</th> 
                 </tr>
                 <tr class="text-secondary fst-italic">
                     <td>&nbsp;</td>
@@ -68,13 +68,7 @@ const Order = {
                     <td>Ед.изм</td>
                     <td>Референсные значения</td>
                 </tr>
-                <tr   v-for="(element) in  elem.result">
-                    <td>&nbsp;</td>
-                    <td>{{element.name}}</td>
-                    <td>{{element.value}}</td>
-                    <td>{{element.unit}}</td>
-                    <td>{{element.reference_min}}-{{element.reference_max}}</td>
-                </tr> 
+                <Order-Cart :element=element v-for="(element) in  elem.result" ></Order-Cart>   
             </tbody>
         </table>
 
@@ -107,6 +101,37 @@ const Order = {
                     console.log(r.data)
                 }
             })
+        }
+    }
+}
+
+const OrderItem = {
+    template:   `
+                    <tr >
+                    <td>&nbsp;</td>
+                    <td>{{element.name}}</td>
+                    <td    :class="{ 'text-danger':ifva}" >{{element.value}}</td>
+                    <td>{{element.unit}}</td>
+                    <td>{{element.reference_min}}-{{element.reference_max}}</td>
+                </tr> 
+    `,
+    props:['element']
+    ,
+    data() {
+        return {
+            ifva:false
+        }
+    },
+    mounted() {
+        this.ifvul()
+    },
+    methods:{
+        ifvul(){
+
+            if ( this.element.value> this.element.reference_max || this.element.value< this.element.reference_min)
+            {
+                this.ifva = true
+            }
         }
     }
 }

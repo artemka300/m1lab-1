@@ -8,12 +8,12 @@ const Login = {
         <form  >
             <div class="row">
                 <div class="col-12">
-                    <input type="text" class="form-control is-invalid" placeholder="Телефон" v-model="Phone">
-                    <div class="invalid-feedback">Сообщение об ошибке</div>
+                    <input type="text" class="form-control  " :class="{'is-invalid':tellerr}" placeholder="Телефон" v-model="Phone">
+                    <div class="invalid-feedback">{{eerarr}}</div>
                 </div>
                 <div class="col-12 mt-2">
                     <input type="password" class="form-control" placeholder="Пароль" v-model="password">
-                    <div class="invalid-feedback">Сообщение об ошибке</div>
+             
                 </div>
                 <div class="col-12 mt-4">
                     <button class="btn btn-info w-100" @click="postlogin()">Войти</button>
@@ -30,31 +30,34 @@ const Login = {
     </section>
 
 </div>
-
     `,
     date() {
         return {
-
-         Phone:'',
-         password:'',
-            getif:true
+            Phone: '',
+            password: '',
+            tellerr: false,
+            eerarr: '',
         }
     },
-    methods:{
-        postlogin(){
-            const  form= new  FormData();
-            form.append('phone',this.Phone)
-            form.append('password',this.password)
-            fetch('http://lab/api/login',{
-                method:'POST',
-                body:form
-            }).then(r=> r.json()).then(r=>{
-                if (r.data.token!=undefined)
-                {
-                    localStorage.setItem('token',r.data.token)
-                    console.log(r.data)
+    methods: {
+        postlogin() {
+            const form = new FormData();
+            form.append('phone', this.Phone)
+            form.append('password', this.password)
+            fetch('http://lab/api/login', {
+                method: 'POST',
+                body: form
+            }).then(r => r.json()).then(r => {
+                if (r.error!=undefined ) {
+                    this.tellerr =true
+                    this.eerarr = r.error.errors.phone[0]
+                }
+                if (r.data.token != undefined) {
+                    this.getif = false
+                    localStorage.setItem('token', r.data.token)
                     this.$router.push('/')
                 }
+
             })
         }
     }
