@@ -78,12 +78,15 @@ const  LkPage={
                 'Authorization': 'Bearer ' + localStorage.getItem('token')
             }
         }).then(r=>r.json()).then(r=>{
+
             if (r.data.items!=undefined)
             {
                 this.$root.ikpagearr = r.data.items
 
                 console.log(this.$root.ikpagearr)
             }
+        }).catch(r=>{
+            this.$router.push('/login')
         })
     }
     }

@@ -55,7 +55,7 @@ const Login = {
                 if (r.data.token != undefined) {
                     this.getif = false
                     localStorage.setItem('token', r.data.token)
-                    this.$router.push('/')
+                    this.$router.push('/lk-page')
                 }
 
             })
