@@ -5,7 +5,7 @@ const SearchCart = {
         <td>{{itemarr.research_object}}</td>
         <td>{{itemarr.lead_time}} день</td>
         <td>{{itemarr.price}} руб.</td>
-        <td class="text-end"><button type="button" v-if="!clickon"   class="btn btn-outline-info" @click="delcart()">Из корзины</button>
+        <td class="text-end"><button type="button" v-if="!clickon"   class="btn btn-outline-info" @click="delcart(itemarr.id)">Из корзины</button>
         <button type="button" v-if="clickon"  class="btn btn-outline-info" @click="addcart(itemarr.id)"> В корзину</button>
         </td>
  
@@ -18,23 +18,20 @@ const SearchCart = {
     data(){
         return{
             clickon:true,
-            elarr:0
         }
     },
     methods:{
 
-        addcart(namder)
+        addcart(id)
         {
-            this.$root.cart.push(namder);
+            this.$root.cart.push(id);
             this.clickon= false;
-            this.elarr=this.$root.cart.length
             this.$root.postcart()
-
         },
-        delcart()
+        delcart(id)
         {
             this.clickon= true;
-            this.$root.cart.splice(this.elarr-1,this.elarr)
+            this.$root.cart.splice(this.$root.cart.indexOf(id),1)
             this.$root.postcart()
         }
     }
